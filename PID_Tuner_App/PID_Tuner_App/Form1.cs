@@ -74,13 +74,12 @@ namespace PID_Tuner_App
 
         private void ConnectButton_Click(object sender, EventArgs e)
         {   
-            PortMenu.Enabled = false;
-            BaudRateMenu.Enabled = false;
-            ConnectButton.Enabled = false;
-            DisconnectButton.Enabled = true;
-
             if (PortMenu.SelectedItem != null)
             {
+                PortMenu.Enabled = false;
+                BaudRateMenu.Enabled = false;
+                ConnectButton.Enabled = false;
+                DisconnectButton.Enabled = true;
                 serialPort1.Open();
             }
 
