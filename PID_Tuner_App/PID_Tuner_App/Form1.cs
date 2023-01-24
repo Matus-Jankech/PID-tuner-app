@@ -27,7 +27,7 @@ namespace PID_Tuner_App
             {
                 PortMenu.Items.Add(port);
             }
-            if (ports != null)
+            if (ports.Length != 0)
             {
                 PortMenu.SelectedIndex = 0;
             }
@@ -58,7 +58,7 @@ namespace PID_Tuner_App
             { 
                 PortMenu.Items.Add(port); 
             }
-            if (ports != null)
+            if (ports.Length != 0)
             {
                 PortMenu.SelectedIndex = 0;
             }
