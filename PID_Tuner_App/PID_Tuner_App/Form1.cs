@@ -26,13 +26,11 @@ namespace PID_Tuner_App
             foreach (string port in ports)
             {
                 PortMenu.Items.Add(port);
-            }
-            if (ports.Length != 0)
-            {
                 PortMenu.SelectedIndex = 0;
             }
-
             BaudRateMenu.SelectedIndex = 0;
+
+            DisconnectButton.Visible = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -56,10 +54,7 @@ namespace PID_Tuner_App
             PortMenu.Items.Clear();
             foreach (string port in ports)
             { 
-                PortMenu.Items.Add(port); 
-            }
-            if (ports.Length != 0)
-            {
+                PortMenu.Items.Add(port);
                 PortMenu.SelectedIndex = 0;
             }
         }
@@ -76,6 +71,8 @@ namespace PID_Tuner_App
         {   
             if (PortMenu.SelectedItem != null)
             {
+                ConnectButton.Visible = false;
+                DisconnectButton.Visible = true;
                 PortMenu.Enabled = false;
                 BaudRateMenu.Enabled = false;
                 ConnectButton.Enabled = false;
@@ -89,6 +86,8 @@ namespace PID_Tuner_App
 
         private void DisconnectButton_Click(object sender, EventArgs e)
         {
+            ConnectButton.Visible = true;
+            DisconnectButton.Visible = false;
             PortMenu.Enabled = true;
             BaudRateMenu.Enabled = true;
             ConnectButton.Enabled = true;
