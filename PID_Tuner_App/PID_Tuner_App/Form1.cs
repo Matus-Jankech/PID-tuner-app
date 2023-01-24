@@ -78,7 +78,12 @@ namespace PID_Tuner_App
             BaudRateMenu.Enabled = false;
             ConnectButton.Enabled = false;
             DisconnectButton.Enabled = true;
-            serialPort1.Open();
+
+            if (PortMenu.SelectedItem != null)
+            {
+                serialPort1.Open();
+            }
+
             Console.WriteLine(serialPort1.PortName);
             Console.WriteLine(serialPort1.BaudRate);
         }
