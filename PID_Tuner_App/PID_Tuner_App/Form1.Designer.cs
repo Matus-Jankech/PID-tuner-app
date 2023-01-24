@@ -28,87 +28,98 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.PortMenu = new System.Windows.Forms.ComboBox();
             this.PortLabel = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.BaudRateLabel = new System.Windows.Forms.Label();
+            this.BaudRateMenu = new System.Windows.Forms.ComboBox();
+            this.ConnectButton = new System.Windows.Forms.Button();
+            this.DisconnectButton = new System.Windows.Forms.Button();
+            this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.SuspendLayout();
             // 
             // PortMenu
             // 
             this.PortMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PortMenu.FormattingEnabled = true;
-            this.PortMenu.Location = new System.Drawing.Point(113, 47);
-            this.PortMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.PortMenu.Location = new System.Drawing.Point(108, 38);
             this.PortMenu.Name = "PortMenu";
-            this.PortMenu.Size = new System.Drawing.Size(160, 24);
+            this.PortMenu.Size = new System.Drawing.Size(121, 21);
             this.PortMenu.TabIndex = 0;
+            this.PortMenu.SelectedIndexChanged += new System.EventHandler(this.PortMenu_SelectedIndexChanged);
+            this.PortMenu.Click += new System.EventHandler(this.PortMenu_Click);
             // 
             // PortLabel
             // 
             this.PortLabel.AutoSize = true;
-            this.PortLabel.Location = new System.Drawing.Point(59, 50);
-            this.PortLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PortLabel.Location = new System.Drawing.Point(76, 41);
             this.PortLabel.Name = "PortLabel";
-            this.PortLabel.Size = new System.Drawing.Size(31, 16);
+            this.PortLabel.Size = new System.Drawing.Size(26, 13);
             this.PortLabel.TabIndex = 1;
             this.PortLabel.Text = "Port";
             // 
-            // label2
+            // BaudRateLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(59, 87);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "label2";
+            this.BaudRateLabel.AutoSize = true;
+            this.BaudRateLabel.Location = new System.Drawing.Point(44, 71);
+            this.BaudRateLabel.Name = "BaudRateLabel";
+            this.BaudRateLabel.Size = new System.Drawing.Size(58, 13);
+            this.BaudRateLabel.TabIndex = 2;
+            this.BaudRateLabel.Text = "Baud Rate";
             // 
-            // comboBox2
+            // BaudRateMenu
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(113, 84);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(160, 24);
-            this.comboBox2.TabIndex = 3;
+            this.BaudRateMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.BaudRateMenu.FormattingEnabled = true;
+            this.BaudRateMenu.Items.AddRange(new object[] {
+            "9600",
+            "14400",
+            "19200",
+            "38400",
+            "57600",
+            "115200"});
+            this.BaudRateMenu.Location = new System.Drawing.Point(108, 68);
+            this.BaudRateMenu.Name = "BaudRateMenu";
+            this.BaudRateMenu.Size = new System.Drawing.Size(121, 21);
+            this.BaudRateMenu.TabIndex = 3;
+            this.BaudRateMenu.SelectedIndexChanged += new System.EventHandler(this.BaudRateMenu_SelectedIndexChanged);
             // 
-            // button1
+            // ConnectButton
             // 
-            this.button1.Location = new System.Drawing.Point(63, 135);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ConnectButton.Location = new System.Drawing.Point(47, 110);
+            this.ConnectButton.Name = "ConnectButton";
+            this.ConnectButton.Size = new System.Drawing.Size(182, 23);
+            this.ConnectButton.TabIndex = 4;
+            this.ConnectButton.Text = "Connect";
+            this.ConnectButton.UseVisualStyleBackColor = true;
+            this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
             // 
-            // button2
+            // DisconnectButton
             // 
-            this.button2.Location = new System.Drawing.Point(175, 135);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 28);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.DisconnectButton.Enabled = false;
+            this.DisconnectButton.Location = new System.Drawing.Point(47, 139);
+            this.DisconnectButton.Name = "DisconnectButton";
+            this.DisconnectButton.Size = new System.Drawing.Size(182, 23);
+            this.DisconnectButton.TabIndex = 5;
+            this.DisconnectButton.Text = "Disconnect";
+            this.DisconnectButton.UseVisualStyleBackColor = true;
+            this.DisconnectButton.Click += new System.EventHandler(this.DisconnectButton_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.label2);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.DisconnectButton);
+            this.Controls.Add(this.ConnectButton);
+            this.Controls.Add(this.BaudRateMenu);
+            this.Controls.Add(this.BaudRateLabel);
             this.Controls.Add(this.PortLabel);
             this.Controls.Add(this.PortMenu);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -118,10 +129,11 @@
 
         private System.Windows.Forms.ComboBox PortMenu;
         private System.Windows.Forms.Label PortLabel;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label BaudRateLabel;
+        private System.Windows.Forms.ComboBox BaudRateMenu;
+        private System.Windows.Forms.Button ConnectButton;
+        private System.Windows.Forms.Button DisconnectButton;
+        private System.IO.Ports.SerialPort serialPort1;
     }
 }
 
