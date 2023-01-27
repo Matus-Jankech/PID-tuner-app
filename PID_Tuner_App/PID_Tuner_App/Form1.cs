@@ -23,8 +23,9 @@ namespace PID_Tuner_App
         private void Form1_Load(object sender, EventArgs e)
         {
             string[] ports = SerialPort.GetPortNames();
-            PortMenu.Items.AddRange(ports);
+
             try{
+                PortMenu.Items.AddRange(ports);
                 PortMenu.SelectedIndex = 0;
             }
             catch{}
@@ -50,9 +51,9 @@ namespace PID_Tuner_App
         {
             string[] ports = SerialPort.GetPortNames();
             PortMenu.Items.Clear();
-            PortMenu.Items.AddRange(ports);
             try
             {
+                PortMenu.Items.AddRange(ports);
                 PortMenu.SelectedIndex = 0;
             }
             catch { }
@@ -101,16 +102,16 @@ namespace PID_Tuner_App
             string buffer;
             char identByte;
 
-            buffer = serialPort1.ReadExisting();
+            buffer = serialPort1.ReadLine();
             var parts = buffer.Split(';');
             identByte = Convert.ToChar(parts[0]);
-            Double Kp = Convert.ToDouble(parts[1]);
-            Double Ki = Convert.ToDouble(parts[2]);
-            Double Kd = Convert.ToDouble(parts[3]);
 
             switch (identByte)
             {
                 case 'v':
+                    Double Kp = Convert.ToDouble(parts[1]);
+                    Double Ki = Convert.ToDouble(parts[2]);
+                    Double Kd = Convert.ToDouble(parts[3]);
                     P_VelText.Invoke((MethodInvoker)(() => P_VelText.Text = Kp.ToString("0.000")));
                     I_VelText.Invoke((MethodInvoker)(() => I_VelText.Text = Ki.ToString("0.000")));
                     D_VelText.Invoke((MethodInvoker)(() => D_VelText.Text = Kd.ToString("0.000")));
