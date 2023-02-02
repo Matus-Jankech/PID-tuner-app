@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.IO.Ports;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PID_Tuner_App
 {
     public partial class Form1 : Form
     {
-
+        public double t = 0;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +33,11 @@ namespace PID_Tuner_App
             catch{}
             BaudRateMenu.SelectedIndex = 0;
             DisconnectButton.Visible = false;
+
+            chart1.ChartAreas["ChartArea1"].AxisX.Minimum = 0;
+            chart1.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
+            chart2.ChartAreas["ChartArea1"].AxisX.Minimum = 0;
+            chart2.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -81,9 +88,13 @@ namespace PID_Tuner_App
                 VelReadButton.Enabled = true;
                 TiltSendButton.Enabled = true;
                 TiltReadButton.Enabled = true;
-                chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref Vel"].Points.Clear()));
-                chart1.Invoke((MethodInvoker)(() => chart1.Series["Real Vel"].Points.Clear()));
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref_Vel"].Points.Clear()));
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_1"].Points.Clear()));
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.Clear()));
+                chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.Clear()));
+                chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.Clear()));
                 serialPort1.Open();
+                SerialTimer.Start();
             }
         }
 
@@ -101,6 +112,7 @@ namespace PID_Tuner_App
             TiltReadButton.Enabled= false;
             serialPort1.Close();
             while (serialPort1.IsOpen) { }
+            SerialTimer.Stop();
         }
 
         private void serialPort1_DataReceived(object sender, SerialDataReceivedEventArgs e)
@@ -111,7 +123,6 @@ namespace PID_Tuner_App
             buffer = serialPort1.ReadLine();
             var parts = buffer.Split(';');
             identByte = Convert.ToChar(parts[0]);
-
             Console.WriteLine(buffer);
 
             switch (identByte)
@@ -137,9 +148,14 @@ namespace PID_Tuner_App
                 case 's':
                     double y1 = Convert.ToDouble(parts[1]);
                     double y2 = Convert.ToDouble(parts[2]);
-                    double t = Convert.ToDouble(parts[3]);
-                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref Vel"].Points.AddXY(t, y1)));
-                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real Vel"].Points.AddXY(t, y2)));
+                    double y3 = Convert.ToDouble(parts[3]);
+                    int y4 = Convert.ToInt16(parts[4]);
+                    int y5 = Convert.ToInt16(parts[5]);
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref_Vel"].Points.AddXY(t,y1)));
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_1"].Points.AddXY(t,y2)));
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.AddXY(t,y3)));
+                    chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.AddXY(t,y4)));
+                    chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.AddXY(t,y5)));
                     break;
             }
             
@@ -171,6 +187,20 @@ namespace PID_Tuner_App
         private void TiltReadButton_Click(object sender, EventArgs e)
         {
             serialPort1.Write("T\n");
+        }
+
+        private void SerialTimer_Tick(object sender, EventArgs e)
+        {
+            t = t + 0.2;
+            if (Math.IEEERemainder(t,10) < 0.1 && Math.IEEERemainder(t, 10) > -0.1)
+            {   
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref_Vel"].Points.Clear()));
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_1"].Points.Clear()));
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.Clear()));
+                chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.Clear()));
+                chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.Clear()));
+                t = 0;
+            }
         }
     }
 }
