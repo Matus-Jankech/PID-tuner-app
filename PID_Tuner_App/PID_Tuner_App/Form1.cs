@@ -38,6 +38,8 @@ namespace PID_Tuner_App
             chart1.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
             chart2.ChartAreas["ChartArea1"].AxisX.Minimum = 0;
             chart2.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
+            chart3.ChartAreas["ChartArea1"].AxisX.Minimum = 0;
+            chart3.ChartAreas["ChartArea1"].AxisX.Maximum = 10;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -93,6 +95,8 @@ namespace PID_Tuner_App
                 chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.Clear()));
                 chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.Clear()));
                 chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.Clear()));
+                chart3.Invoke((MethodInvoker)(() => chart3.Series["Ref_Pitch"].Points.Clear()));
+                chart3.Invoke((MethodInvoker)(() => chart3.Series["Real_Pitch"].Points.Clear()));
                 serialPort1.Open();
                 SerialTimer.Start();
             }
@@ -145,17 +149,21 @@ namespace PID_Tuner_App
                     D_TiltText.Invoke((MethodInvoker)(() => D_TiltText.Text = Kd1.ToString("0.000")));
                     break;
 
-                case 's':
+                case 'd':
                     double y1 = Convert.ToDouble(parts[1]);
                     double y2 = Convert.ToDouble(parts[2]);
                     double y3 = Convert.ToDouble(parts[3]);
                     int y4 = Convert.ToInt16(parts[4]);
                     int y5 = Convert.ToInt16(parts[5]);
+                    double y6 = Convert.ToDouble(parts[6]);
+                    double y7 = Convert.ToDouble(parts[7]);
                     chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref_Vel"].Points.AddXY(t,y1)));
                     chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_1"].Points.AddXY(t,y2)));
                     chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.AddXY(t,y3)));
                     chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.AddXY(t,y4)));
                     chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.AddXY(t,y5)));
+                    chart3.Invoke((MethodInvoker)(() => chart3.Series["Ref_Pitch"].Points.AddXY(t,y6)));
+                    chart3.Invoke((MethodInvoker)(() => chart3.Series["Real_Pitch"].Points.AddXY(t,y7)));
                     break;
             }
             
@@ -199,6 +207,8 @@ namespace PID_Tuner_App
                 chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.Clear()));
                 chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.Clear()));
                 chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.Clear()));
+                chart3.Invoke((MethodInvoker)(() => chart3.Series["Ref_Pitch"].Points.Clear()));
+                chart3.Invoke((MethodInvoker)(() => chart3.Series["Real_Pitch"].Points.Clear()));
                 t = 0;
             }
         }

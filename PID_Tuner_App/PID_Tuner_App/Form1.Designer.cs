@@ -29,17 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PortMenu = new System.Windows.Forms.ComboBox();
             this.PortLabel = new System.Windows.Forms.Label();
             this.BaudRateLabel = new System.Windows.Forms.Label();
@@ -88,22 +93,23 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.PWM_SendButton = new System.Windows.Forms.Button();
+            this.chart3 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SerialPanel.SuspendLayout();
             this.VelocityPanel.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).BeginInit();
             this.SuspendLayout();
             // 
             // PortMenu
             // 
             this.PortMenu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PortMenu.FormattingEnabled = true;
-            this.PortMenu.Location = new System.Drawing.Point(108, 57);
-            this.PortMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.PortMenu.Location = new System.Drawing.Point(81, 46);
             this.PortMenu.Name = "PortMenu";
-            this.PortMenu.Size = new System.Drawing.Size(160, 24);
+            this.PortMenu.Size = new System.Drawing.Size(121, 21);
             this.PortMenu.TabIndex = 0;
             this.PortMenu.SelectedIndexChanged += new System.EventHandler(this.PortMenu_SelectedIndexChanged);
             this.PortMenu.Click += new System.EventHandler(this.PortMenu_Click);
@@ -112,10 +118,9 @@
             // 
             this.PortLabel.AutoSize = true;
             this.PortLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.PortLabel.Location = new System.Drawing.Point(25, 60);
-            this.PortLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PortLabel.Location = new System.Drawing.Point(19, 49);
             this.PortLabel.Name = "PortLabel";
-            this.PortLabel.Size = new System.Drawing.Size(73, 17);
+            this.PortLabel.Size = new System.Drawing.Size(56, 13);
             this.PortLabel.TabIndex = 1;
             this.PortLabel.Text = "COM Port:";
             // 
@@ -123,10 +128,9 @@
             // 
             this.BaudRateLabel.AutoSize = true;
             this.BaudRateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BaudRateLabel.Location = new System.Drawing.Point(19, 97);
-            this.BaudRateLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.BaudRateLabel.Location = new System.Drawing.Point(14, 79);
             this.BaudRateLabel.Name = "BaudRateLabel";
-            this.BaudRateLabel.Size = new System.Drawing.Size(79, 17);
+            this.BaudRateLabel.Size = new System.Drawing.Size(61, 13);
             this.BaudRateLabel.TabIndex = 2;
             this.BaudRateLabel.Text = "Baud Rate:";
             // 
@@ -141,10 +145,9 @@
             "38400",
             "57600",
             "115200"});
-            this.BaudRateMenu.Location = new System.Drawing.Point(108, 94);
-            this.BaudRateMenu.Margin = new System.Windows.Forms.Padding(4);
+            this.BaudRateMenu.Location = new System.Drawing.Point(81, 76);
             this.BaudRateMenu.Name = "BaudRateMenu";
-            this.BaudRateMenu.Size = new System.Drawing.Size(160, 24);
+            this.BaudRateMenu.Size = new System.Drawing.Size(121, 21);
             this.BaudRateMenu.TabIndex = 3;
             this.BaudRateMenu.SelectedIndexChanged += new System.EventHandler(this.BaudRateMenu_SelectedIndexChanged);
             // 
@@ -152,10 +155,9 @@
             // 
             this.ConnectButton.BackColor = System.Drawing.Color.Lime;
             this.ConnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ConnectButton.Location = new System.Drawing.Point(23, 139);
-            this.ConnectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.ConnectButton.Location = new System.Drawing.Point(17, 113);
             this.ConnectButton.Name = "ConnectButton";
-            this.ConnectButton.Size = new System.Drawing.Size(247, 28);
+            this.ConnectButton.Size = new System.Drawing.Size(185, 23);
             this.ConnectButton.TabIndex = 4;
             this.ConnectButton.Text = "Connect";
             this.ConnectButton.UseVisualStyleBackColor = false;
@@ -166,10 +168,9 @@
             this.DisconnectButton.BackColor = System.Drawing.Color.Red;
             this.DisconnectButton.Enabled = false;
             this.DisconnectButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.DisconnectButton.Location = new System.Drawing.Point(23, 139);
-            this.DisconnectButton.Margin = new System.Windows.Forms.Padding(4);
+            this.DisconnectButton.Location = new System.Drawing.Point(17, 113);
             this.DisconnectButton.Name = "DisconnectButton";
-            this.DisconnectButton.Size = new System.Drawing.Size(247, 28);
+            this.DisconnectButton.Size = new System.Drawing.Size(185, 23);
             this.DisconnectButton.TabIndex = 5;
             this.DisconnectButton.Text = "Disconnect";
             this.DisconnectButton.UseVisualStyleBackColor = false;
@@ -190,10 +191,9 @@
             this.SerialPanel.Controls.Add(this.PortLabel);
             this.SerialPanel.Controls.Add(this.PortMenu);
             this.SerialPanel.Controls.Add(this.BaudRateLabel);
-            this.SerialPanel.Location = new System.Drawing.Point(35, 32);
-            this.SerialPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.SerialPanel.Location = new System.Drawing.Point(26, 26);
             this.SerialPanel.Name = "SerialPanel";
-            this.SerialPanel.Size = new System.Drawing.Size(303, 183);
+            this.SerialPanel.Size = new System.Drawing.Size(228, 149);
             this.SerialPanel.TabIndex = 6;
             // 
             // SerialComLabel
@@ -203,65 +203,58 @@
             this.SerialComLabel.BackColor = System.Drawing.Color.LightBlue;
             this.SerialComLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.SerialComLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SerialComLabel.Location = new System.Drawing.Point(18, 11);
-            this.SerialComLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.SerialComLabel.Location = new System.Drawing.Point(14, 9);
             this.SerialComLabel.Name = "SerialComLabel";
-            this.SerialComLabel.Padding = new System.Windows.Forms.Padding(4);
-            this.SerialComLabel.Size = new System.Drawing.Size(252, 30);
+            this.SerialComLabel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.SerialComLabel.Size = new System.Drawing.Size(205, 24);
             this.SerialComLabel.TabIndex = 7;
             this.SerialComLabel.Text = "Serial communication setup";
             // 
             // P_VelText
             // 
-            this.P_VelText.Location = new System.Drawing.Point(56, 51);
-            this.P_VelText.Margin = new System.Windows.Forms.Padding(4);
+            this.P_VelText.Location = new System.Drawing.Point(42, 41);
             this.P_VelText.Name = "P_VelText";
-            this.P_VelText.Size = new System.Drawing.Size(91, 22);
+            this.P_VelText.Size = new System.Drawing.Size(69, 20);
             this.P_VelText.TabIndex = 7;
             // 
             // I_VelText
             // 
-            this.I_VelText.Location = new System.Drawing.Point(56, 81);
-            this.I_VelText.Margin = new System.Windows.Forms.Padding(4);
+            this.I_VelText.Location = new System.Drawing.Point(42, 66);
             this.I_VelText.Name = "I_VelText";
-            this.I_VelText.Size = new System.Drawing.Size(91, 22);
+            this.I_VelText.Size = new System.Drawing.Size(69, 20);
             this.I_VelText.TabIndex = 8;
             // 
             // D_VelText
             // 
-            this.D_VelText.Location = new System.Drawing.Point(56, 111);
-            this.D_VelText.Margin = new System.Windows.Forms.Padding(4);
+            this.D_VelText.Location = new System.Drawing.Point(42, 90);
             this.D_VelText.Name = "D_VelText";
-            this.D_VelText.Size = new System.Drawing.Size(91, 22);
+            this.D_VelText.Size = new System.Drawing.Size(69, 20);
             this.D_VelText.TabIndex = 9;
             // 
             // PLabel
             // 
             this.PLabel.AutoSize = true;
-            this.PLabel.Location = new System.Drawing.Point(23, 54);
-            this.PLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PLabel.Location = new System.Drawing.Point(17, 44);
             this.PLabel.Name = "PLabel";
-            this.PLabel.Size = new System.Drawing.Size(26, 16);
+            this.PLabel.Size = new System.Drawing.Size(23, 13);
             this.PLabel.TabIndex = 10;
             this.PLabel.Text = "Kp:";
             // 
             // ILabel
             // 
             this.ILabel.AutoSize = true;
-            this.ILabel.Location = new System.Drawing.Point(28, 84);
-            this.ILabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.ILabel.Location = new System.Drawing.Point(21, 68);
             this.ILabel.Name = "ILabel";
-            this.ILabel.Size = new System.Drawing.Size(21, 16);
+            this.ILabel.Size = new System.Drawing.Size(19, 13);
             this.ILabel.TabIndex = 11;
             this.ILabel.Text = "Ki:";
             // 
             // DLabel
             // 
             this.DLabel.AutoSize = true;
-            this.DLabel.Location = new System.Drawing.Point(23, 114);
-            this.DLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.DLabel.Location = new System.Drawing.Point(17, 93);
             this.DLabel.Name = "DLabel";
-            this.DLabel.Size = new System.Drawing.Size(26, 16);
+            this.DLabel.Size = new System.Drawing.Size(23, 13);
             this.DLabel.TabIndex = 12;
             this.DLabel.Text = "Kd:";
             // 
@@ -277,10 +270,9 @@
             this.VelocityPanel.Controls.Add(this.ILabel);
             this.VelocityPanel.Controls.Add(this.I_VelText);
             this.VelocityPanel.Controls.Add(this.D_VelText);
-            this.VelocityPanel.Location = new System.Drawing.Point(346, 32);
-            this.VelocityPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.VelocityPanel.Location = new System.Drawing.Point(260, 26);
             this.VelocityPanel.Name = "VelocityPanel";
-            this.VelocityPanel.Size = new System.Drawing.Size(174, 183);
+            this.VelocityPanel.Size = new System.Drawing.Size(131, 149);
             this.VelocityPanel.TabIndex = 13;
             // 
             // VelReadButton
@@ -288,9 +280,10 @@
             this.VelReadButton.BackColor = System.Drawing.Color.Red;
             this.VelReadButton.Enabled = false;
             this.VelReadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VelReadButton.Location = new System.Drawing.Point(26, 143);
+            this.VelReadButton.Location = new System.Drawing.Point(20, 116);
+            this.VelReadButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VelReadButton.Name = "VelReadButton";
-            this.VelReadButton.Size = new System.Drawing.Size(59, 28);
+            this.VelReadButton.Size = new System.Drawing.Size(44, 23);
             this.VelReadButton.TabIndex = 14;
             this.VelReadButton.Text = "Read";
             this.VelReadButton.UseVisualStyleBackColor = false;
@@ -301,9 +294,10 @@
             this.VelSendButton.BackColor = System.Drawing.Color.Lime;
             this.VelSendButton.Enabled = false;
             this.VelSendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.VelSendButton.Location = new System.Drawing.Point(88, 143);
+            this.VelSendButton.Location = new System.Drawing.Point(66, 116);
+            this.VelSendButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.VelSendButton.Name = "VelSendButton";
-            this.VelSendButton.Size = new System.Drawing.Size(59, 28);
+            this.VelSendButton.Size = new System.Drawing.Size(44, 23);
             this.VelSendButton.TabIndex = 15;
             this.VelSendButton.Text = "Send";
             this.VelSendButton.UseVisualStyleBackColor = false;
@@ -316,11 +310,10 @@
             this.VelocityLabel.BackColor = System.Drawing.Color.LightBlue;
             this.VelocityLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.VelocityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.VelocityLabel.Location = new System.Drawing.Point(24, 11);
-            this.VelocityLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.VelocityLabel.Location = new System.Drawing.Point(18, 9);
             this.VelocityLabel.Name = "VelocityLabel";
-            this.VelocityLabel.Padding = new System.Windows.Forms.Padding(4);
-            this.VelocityLabel.Size = new System.Drawing.Size(123, 30);
+            this.VelocityLabel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.VelocityLabel.Size = new System.Drawing.Size(100, 24);
             this.VelocityLabel.TabIndex = 14;
             this.VelocityLabel.Text = "Velocity PID";
             // 
@@ -336,10 +329,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.I_TiltText);
             this.panel1.Controls.Add(this.D_TiltText);
-            this.panel1.Location = new System.Drawing.Point(528, 32);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Location = new System.Drawing.Point(396, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(174, 183);
+            this.panel1.Size = new System.Drawing.Size(131, 149);
             this.panel1.TabIndex = 14;
             // 
             // TiltReadButton
@@ -347,9 +339,10 @@
             this.TiltReadButton.BackColor = System.Drawing.Color.Red;
             this.TiltReadButton.Enabled = false;
             this.TiltReadButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TiltReadButton.Location = new System.Drawing.Point(27, 143);
+            this.TiltReadButton.Location = new System.Drawing.Point(20, 116);
+            this.TiltReadButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TiltReadButton.Name = "TiltReadButton";
-            this.TiltReadButton.Size = new System.Drawing.Size(59, 28);
+            this.TiltReadButton.Size = new System.Drawing.Size(44, 23);
             this.TiltReadButton.TabIndex = 14;
             this.TiltReadButton.Text = "Read";
             this.TiltReadButton.UseVisualStyleBackColor = false;
@@ -360,9 +353,10 @@
             this.TiltSendButton.BackColor = System.Drawing.Color.Lime;
             this.TiltSendButton.Enabled = false;
             this.TiltSendButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.TiltSendButton.Location = new System.Drawing.Point(89, 143);
+            this.TiltSendButton.Location = new System.Drawing.Point(67, 116);
+            this.TiltSendButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.TiltSendButton.Name = "TiltSendButton";
-            this.TiltSendButton.Size = new System.Drawing.Size(59, 28);
+            this.TiltSendButton.Size = new System.Drawing.Size(44, 23);
             this.TiltSendButton.TabIndex = 15;
             this.TiltSendButton.Text = "Send";
             this.TiltSendButton.UseVisualStyleBackColor = false;
@@ -375,109 +369,103 @@
             this.TiltLabel.BackColor = System.Drawing.Color.LightBlue;
             this.TiltLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TiltLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.TiltLabel.Location = new System.Drawing.Point(45, 11);
-            this.TiltLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.TiltLabel.Location = new System.Drawing.Point(34, 9);
             this.TiltLabel.Name = "TiltLabel";
-            this.TiltLabel.Padding = new System.Windows.Forms.Padding(4);
-            this.TiltLabel.Size = new System.Drawing.Size(83, 30);
+            this.TiltLabel.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.TiltLabel.Size = new System.Drawing.Size(66, 24);
             this.TiltLabel.TabIndex = 14;
             this.TiltLabel.Text = "Tilt PID";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(24, 54);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(18, 44);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 16);
+            this.label2.Size = new System.Drawing.Size(23, 13);
             this.label2.TabIndex = 10;
             this.label2.Text = "Kp:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 114);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(18, 93);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 16);
+            this.label3.Size = new System.Drawing.Size(23, 13);
             this.label3.TabIndex = 12;
             this.label3.Text = "Kd:";
             // 
             // P_TiltText
             // 
-            this.P_TiltText.Location = new System.Drawing.Point(57, 51);
-            this.P_TiltText.Margin = new System.Windows.Forms.Padding(4);
+            this.P_TiltText.Location = new System.Drawing.Point(43, 41);
             this.P_TiltText.Name = "P_TiltText";
-            this.P_TiltText.Size = new System.Drawing.Size(91, 22);
+            this.P_TiltText.Size = new System.Drawing.Size(69, 20);
             this.P_TiltText.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(29, 84);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Location = new System.Drawing.Point(22, 68);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(21, 16);
+            this.label4.Size = new System.Drawing.Size(19, 13);
             this.label4.TabIndex = 11;
             this.label4.Text = "Ki:";
             // 
             // I_TiltText
             // 
-            this.I_TiltText.Location = new System.Drawing.Point(57, 81);
-            this.I_TiltText.Margin = new System.Windows.Forms.Padding(4);
+            this.I_TiltText.Location = new System.Drawing.Point(43, 66);
             this.I_TiltText.Name = "I_TiltText";
-            this.I_TiltText.Size = new System.Drawing.Size(91, 22);
+            this.I_TiltText.Size = new System.Drawing.Size(69, 20);
             this.I_TiltText.TabIndex = 8;
             // 
             // D_TiltText
             // 
-            this.D_TiltText.Location = new System.Drawing.Point(57, 111);
-            this.D_TiltText.Margin = new System.Windows.Forms.Padding(4);
+            this.D_TiltText.Location = new System.Drawing.Point(43, 90);
             this.D_TiltText.Name = "D_TiltText";
-            this.D_TiltText.Size = new System.Drawing.Size(91, 22);
+            this.D_TiltText.Size = new System.Drawing.Size(69, 20);
             this.D_TiltText.TabIndex = 9;
             // 
             // chart1
             // 
-            chartArea3.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea3);
-            legend3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
-            legend3.BorderColor = System.Drawing.Color.Black;
-            legend3.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
-            legend3.Name = "Legend1";
-            legend3.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            this.chart1.Legends.Add(legend3);
-            this.chart1.Location = new System.Drawing.Point(35, 231);
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
+            legend1.BorderColor = System.Drawing.Color.Black;
+            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend1.Name = "Legend1";
+            legend1.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(26, 188);
+            this.chart1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart1.Name = "chart1";
-            series6.BorderWidth = 2;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Color = System.Drawing.Color.Blue;
-            series6.Legend = "Legend1";
-            series6.Name = "Ref_Vel";
-            series7.BorderWidth = 2;
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series7.Color = System.Drawing.Color.Red;
-            series7.Legend = "Legend1";
-            series7.Name = "Real_Vel_1";
-            series8.BorderWidth = 2;
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series8.Color = System.Drawing.Color.Lime;
-            series8.Legend = "Legend1";
-            series8.Name = "Real_Vel_2";
-            this.chart1.Series.Add(series6);
-            this.chart1.Series.Add(series7);
-            this.chart1.Series.Add(series8);
-            this.chart1.Size = new System.Drawing.Size(1038, 300);
+            series1.BorderWidth = 2;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.Blue;
+            series1.Legend = "Legend1";
+            series1.Name = "Ref_Vel";
+            series2.BorderWidth = 2;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.Red;
+            series2.Legend = "Legend1";
+            series2.Name = "Real_Vel_1";
+            series3.BorderWidth = 2;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.Lime;
+            series3.Legend = "Legend1";
+            series3.Name = "Real_Vel_2";
+            this.chart1.Series.Add(series1);
+            this.chart1.Series.Add(series2);
+            this.chart1.Series.Add(series3);
+            this.chart1.Size = new System.Drawing.Size(740, 300);
             this.chart1.TabIndex = 15;
-            title3.BackColor = System.Drawing.Color.LightBlue;
-            title3.BorderWidth = 2;
-            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            title3.Name = "Title1";
-            title3.Text = "Velocity ";
-            this.chart1.Titles.Add(title3);
+            title1.BackColor = System.Drawing.Color.LightBlue;
+            title1.BorderWidth = 2;
+            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            title1.Name = "Title1";
+            title1.Text = "Velocity ";
+            this.chart1.Titles.Add(title1);
             // 
             // panel2
             // 
@@ -491,10 +479,9 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.textBox2);
             this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Location = new System.Drawing.Point(710, 32);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Location = new System.Drawing.Point(532, 26);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(174, 183);
+            this.panel2.Size = new System.Drawing.Size(131, 149);
             this.panel2.TabIndex = 16;
             // 
             // button1
@@ -502,9 +489,10 @@
             this.button1.BackColor = System.Drawing.Color.Red;
             this.button1.Enabled = false;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(27, 143);
+            this.button1.Location = new System.Drawing.Point(20, 116);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(59, 28);
+            this.button1.Size = new System.Drawing.Size(44, 23);
             this.button1.TabIndex = 14;
             this.button1.Text = "Read";
             this.button1.UseVisualStyleBackColor = false;
@@ -514,9 +502,10 @@
             this.button2.BackColor = System.Drawing.Color.Lime;
             this.button2.Enabled = false;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(89, 143);
+            this.button2.Location = new System.Drawing.Point(67, 116);
+            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(59, 28);
+            this.button2.Size = new System.Drawing.Size(44, 23);
             this.button2.TabIndex = 15;
             this.button2.Text = "Send";
             this.button2.UseVisualStyleBackColor = false;
@@ -528,66 +517,59 @@
             this.label1.BackColor = System.Drawing.Color.LightBlue;
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(45, 11);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(20, 9);
             this.label1.Name = "label1";
-            this.label1.Padding = new System.Windows.Forms.Padding(4);
-            this.label1.Size = new System.Drawing.Size(83, 30);
+            this.label1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.label1.Size = new System.Drawing.Size(100, 24);
             this.label1.TabIndex = 14;
-            this.label1.Text = "Tilt PID";
+            this.label1.Text = "Position PID";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(24, 54);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label5.Location = new System.Drawing.Point(18, 44);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(26, 16);
+            this.label5.Size = new System.Drawing.Size(23, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "Kp:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(24, 114);
-            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label6.Location = new System.Drawing.Point(18, 93);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 16);
+            this.label6.Size = new System.Drawing.Size(23, 13);
             this.label6.TabIndex = 12;
             this.label6.Text = "Kd:";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 51);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.Location = new System.Drawing.Point(43, 41);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 22);
+            this.textBox1.Size = new System.Drawing.Size(69, 20);
             this.textBox1.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 84);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Location = new System.Drawing.Point(22, 68);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(21, 16);
+            this.label7.Size = new System.Drawing.Size(19, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Ki:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(57, 81);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox2.Location = new System.Drawing.Point(43, 66);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(91, 22);
+            this.textBox2.Size = new System.Drawing.Size(69, 20);
             this.textBox2.TabIndex = 8;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(57, 111);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox3.Location = new System.Drawing.Point(43, 90);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(91, 22);
+            this.textBox3.Size = new System.Drawing.Size(69, 20);
             this.textBox3.TabIndex = 9;
             // 
             // SerialTimer
@@ -597,38 +579,39 @@
             // 
             // chart2
             // 
-            chartArea4.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea4);
-            legend4.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
-            legend4.BorderColor = System.Drawing.Color.Black;
-            legend4.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
-            legend4.Name = "Legend1";
-            legend4.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            this.chart2.Legends.Add(legend4);
-            this.chart2.Location = new System.Drawing.Point(35, 537);
+            chartArea2.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea2);
+            legend2.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
+            legend2.BorderColor = System.Drawing.Color.Black;
+            legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend2.Name = "Legend1";
+            legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart2.Legends.Add(legend2);
+            this.chart2.Location = new System.Drawing.Point(26, 492);
+            this.chart2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.chart2.Name = "chart2";
-            series9.BorderWidth = 2;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series9.Color = System.Drawing.Color.Red;
-            series9.Legend = "Legend1";
-            series9.Name = "PWM_1";
-            series10.BorderWidth = 2;
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series10.Color = System.Drawing.Color.Lime;
-            series10.Legend = "Legend1";
-            series10.Name = "PWM_2";
-            this.chart2.Series.Add(series9);
-            this.chart2.Series.Add(series10);
-            this.chart2.Size = new System.Drawing.Size(1038, 300);
+            series4.BorderWidth = 2;
+            series4.ChartArea = "ChartArea1";
+            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series4.Color = System.Drawing.Color.Red;
+            series4.Legend = "Legend1";
+            series4.Name = "PWM_1";
+            series5.BorderWidth = 2;
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series5.Color = System.Drawing.Color.Lime;
+            series5.Legend = "Legend1";
+            series5.Name = "PWM_2";
+            this.chart2.Series.Add(series4);
+            this.chart2.Series.Add(series5);
+            this.chart2.Size = new System.Drawing.Size(740, 300);
             this.chart2.TabIndex = 17;
-            title4.BackColor = System.Drawing.Color.LightBlue;
-            title4.BorderWidth = 2;
-            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            title4.Name = "Title1";
-            title4.Text = "Action";
-            this.chart2.Titles.Add(title4);
+            title2.BackColor = System.Drawing.Color.LightBlue;
+            title2.BorderWidth = 2;
+            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            title2.Name = "Title1";
+            title2.Text = "PWM";
+            this.chart2.Titles.Add(title2);
             // 
             // contextMenuStrip1
             // 
@@ -638,51 +621,93 @@
             // 
             // PWM_Text1
             // 
-            this.PWM_Text1.Location = new System.Drawing.Point(973, 52);
+            this.PWM_Text1.Location = new System.Drawing.Point(730, 42);
+            this.PWM_Text1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PWM_Text1.Name = "PWM_Text1";
-            this.PWM_Text1.Size = new System.Drawing.Size(100, 22);
+            this.PWM_Text1.Size = new System.Drawing.Size(76, 20);
             this.PWM_Text1.TabIndex = 19;
             // 
             // PWM_Text2
             // 
-            this.PWM_Text2.Location = new System.Drawing.Point(973, 81);
+            this.PWM_Text2.Location = new System.Drawing.Point(730, 66);
+            this.PWM_Text2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PWM_Text2.Name = "PWM_Text2";
-            this.PWM_Text2.Size = new System.Drawing.Size(100, 22);
+            this.PWM_Text2.Size = new System.Drawing.Size(76, 20);
             this.PWM_Text2.TabIndex = 20;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(899, 55);
+            this.label8.Location = new System.Drawing.Point(674, 45);
+            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(54, 16);
+            this.label8.Size = new System.Drawing.Size(46, 13);
             this.label8.TabIndex = 21;
             this.label8.Text = "PWM_1";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(899, 83);
+            this.label9.Location = new System.Drawing.Point(674, 67);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(54, 16);
+            this.label9.Size = new System.Drawing.Size(46, 13);
             this.label9.TabIndex = 22;
             this.label9.Text = "PWM_2";
             // 
             // PWM_SendButton
             // 
-            this.PWM_SendButton.Location = new System.Drawing.Point(902, 110);
+            this.PWM_SendButton.Location = new System.Drawing.Point(676, 89);
+            this.PWM_SendButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.PWM_SendButton.Name = "PWM_SendButton";
-            this.PWM_SendButton.Size = new System.Drawing.Size(171, 26);
+            this.PWM_SendButton.Size = new System.Drawing.Size(128, 21);
             this.PWM_SendButton.TabIndex = 23;
             this.PWM_SendButton.Text = "send";
             this.PWM_SendButton.UseVisualStyleBackColor = true;
             this.PWM_SendButton.Click += new System.EventHandler(this.PWM_SendButton_Click);
             // 
+            // chart3
+            // 
+            chartArea3.Name = "ChartArea1";
+            this.chart3.ChartAreas.Add(chartArea3);
+            legend3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
+            legend3.BorderColor = System.Drawing.Color.Black;
+            legend3.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend3.Name = "Legend1";
+            legend3.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart3.Legends.Add(legend3);
+            this.chart3.Location = new System.Drawing.Point(770, 188);
+            this.chart3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chart3.Name = "chart3";
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.Blue;
+            series6.Legend = "Legend1";
+            series6.Name = "Ref_Pitch";
+            series7.BorderWidth = 2;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Color = System.Drawing.Color.Red;
+            series7.Legend = "Legend1";
+            series7.Name = "Real_Pitch";
+            this.chart3.Series.Add(series6);
+            this.chart3.Series.Add(series7);
+            this.chart3.Size = new System.Drawing.Size(740, 300);
+            this.chart3.TabIndex = 24;
+            title3.BackColor = System.Drawing.Color.LightBlue;
+            title3.BorderWidth = 2;
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            title3.Name = "Title1";
+            title3.Text = "Tilt";
+            this.chart3.Titles.Add(title3);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1085, 885);
+            this.ClientSize = new System.Drawing.Size(1540, 808);
+            this.Controls.Add(this.chart3);
             this.Controls.Add(this.PWM_SendButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
@@ -694,7 +719,6 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.VelocityPanel);
             this.Controls.Add(this.SerialPanel);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "PID Tunner App";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
@@ -709,6 +733,7 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -764,6 +789,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button PWM_SendButton;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart3;
     }
 }
 
