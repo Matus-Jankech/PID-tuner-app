@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title3 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.PortMenu = new System.Windows.Forms.ComboBox();
             this.PortLabel = new System.Windows.Forms.Label();
             this.BaudRateLabel = new System.Windows.Forms.Label();
@@ -82,6 +82,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.SerialTimer = new System.Windows.Forms.Timer(this.components);
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.PWM_Text1 = new System.Windows.Forms.TextBox();
+            this.PWM_Text2 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.PWM_SendButton = new System.Windows.Forms.Button();
             this.SerialPanel.SuspendLayout();
             this.VelocityPanel.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -433,45 +439,45 @@
             // 
             // chart1
             // 
-            chartArea1.Name = "ChartArea1";
-            this.chart1.ChartAreas.Add(chartArea1);
-            legend1.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
-            legend1.BorderColor = System.Drawing.Color.Black;
-            legend1.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
-            legend1.Name = "Legend1";
-            legend1.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            this.chart1.Legends.Add(legend1);
+            chartArea3.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea3);
+            legend3.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
+            legend3.BorderColor = System.Drawing.Color.Black;
+            legend3.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend3.Name = "Legend1";
+            legend3.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart1.Legends.Add(legend3);
             this.chart1.Location = new System.Drawing.Point(35, 231);
             this.chart1.Name = "chart1";
-            series1.BorderWidth = 2;
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series1.Color = System.Drawing.Color.Blue;
-            series1.Legend = "Legend1";
-            series1.Name = "Ref_Vel";
-            series2.BorderWidth = 2;
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series2.Color = System.Drawing.Color.Red;
-            series2.Legend = "Legend1";
-            series2.Name = "Real_Vel_1";
-            series3.BorderWidth = 2;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series3.Color = System.Drawing.Color.Lime;
-            series3.Legend = "Legend1";
-            series3.Name = "Real_Vel_2";
-            this.chart1.Series.Add(series1);
-            this.chart1.Series.Add(series2);
-            this.chart1.Series.Add(series3);
+            series6.BorderWidth = 2;
+            series6.ChartArea = "ChartArea1";
+            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series6.Color = System.Drawing.Color.Blue;
+            series6.Legend = "Legend1";
+            series6.Name = "Ref_Vel";
+            series7.BorderWidth = 2;
+            series7.ChartArea = "ChartArea1";
+            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series7.Color = System.Drawing.Color.Red;
+            series7.Legend = "Legend1";
+            series7.Name = "Real_Vel_1";
+            series8.BorderWidth = 2;
+            series8.ChartArea = "ChartArea1";
+            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series8.Color = System.Drawing.Color.Lime;
+            series8.Legend = "Legend1";
+            series8.Name = "Real_Vel_2";
+            this.chart1.Series.Add(series6);
+            this.chart1.Series.Add(series7);
+            this.chart1.Series.Add(series8);
             this.chart1.Size = new System.Drawing.Size(1038, 300);
             this.chart1.TabIndex = 15;
-            title1.BackColor = System.Drawing.Color.LightBlue;
-            title1.BorderWidth = 2;
-            title1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            title1.Name = "Title1";
-            title1.Text = "Velocity ";
-            this.chart1.Titles.Add(title1);
+            title3.BackColor = System.Drawing.Color.LightBlue;
+            title3.BorderWidth = 2;
+            title3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            title3.Name = "Title1";
+            title3.Text = "Velocity ";
+            this.chart1.Titles.Add(title3);
             // 
             // panel2
             // 
@@ -591,44 +597,97 @@
             // 
             // chart2
             // 
-            chartArea2.Name = "ChartArea1";
-            this.chart2.ChartAreas.Add(chartArea2);
-            legend2.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
-            legend2.BorderColor = System.Drawing.Color.Black;
-            legend2.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
-            legend2.Name = "Legend1";
-            legend2.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
-            this.chart2.Legends.Add(legend2);
+            chartArea4.Name = "ChartArea1";
+            this.chart2.ChartAreas.Add(chartArea4);
+            legend4.BackImageWrapMode = System.Windows.Forms.DataVisualization.Charting.ChartImageWrapMode.TileFlipX;
+            legend4.BorderColor = System.Drawing.Color.Black;
+            legend4.LegendStyle = System.Windows.Forms.DataVisualization.Charting.LegendStyle.Column;
+            legend4.Name = "Legend1";
+            legend4.TableStyle = System.Windows.Forms.DataVisualization.Charting.LegendTableStyle.Wide;
+            this.chart2.Legends.Add(legend4);
             this.chart2.Location = new System.Drawing.Point(35, 537);
             this.chart2.Name = "chart2";
-            series4.BorderWidth = 2;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.Red;
-            series4.Legend = "Legend1";
-            series4.Name = "PWM_1";
-            series5.BorderWidth = 2;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Color = System.Drawing.Color.Lime;
-            series5.Legend = "Legend1";
-            series5.Name = "PWM_2";
-            this.chart2.Series.Add(series4);
-            this.chart2.Series.Add(series5);
+            series9.BorderWidth = 2;
+            series9.ChartArea = "ChartArea1";
+            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series9.Color = System.Drawing.Color.Red;
+            series9.Legend = "Legend1";
+            series9.Name = "PWM_1";
+            series10.BorderWidth = 2;
+            series10.ChartArea = "ChartArea1";
+            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series10.Color = System.Drawing.Color.Lime;
+            series10.Legend = "Legend1";
+            series10.Name = "PWM_2";
+            this.chart2.Series.Add(series9);
+            this.chart2.Series.Add(series10);
             this.chart2.Size = new System.Drawing.Size(1038, 300);
             this.chart2.TabIndex = 17;
-            title2.BackColor = System.Drawing.Color.LightBlue;
-            title2.BorderWidth = 2;
-            title2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            title2.Name = "Title1";
-            title2.Text = "Action";
-            this.chart2.Titles.Add(title2);
+            title4.BackColor = System.Drawing.Color.LightBlue;
+            title4.BorderWidth = 2;
+            title4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            title4.Name = "Title1";
+            title4.Text = "Action";
+            this.chart2.Titles.Add(title4);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // PWM_Text1
+            // 
+            this.PWM_Text1.Location = new System.Drawing.Point(973, 52);
+            this.PWM_Text1.Name = "PWM_Text1";
+            this.PWM_Text1.Size = new System.Drawing.Size(100, 22);
+            this.PWM_Text1.TabIndex = 19;
+            // 
+            // PWM_Text2
+            // 
+            this.PWM_Text2.Location = new System.Drawing.Point(973, 81);
+            this.PWM_Text2.Name = "PWM_Text2";
+            this.PWM_Text2.Size = new System.Drawing.Size(100, 22);
+            this.PWM_Text2.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(899, 55);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(54, 16);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "PWM_1";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(899, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(54, 16);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "PWM_2";
+            // 
+            // PWM_SendButton
+            // 
+            this.PWM_SendButton.Location = new System.Drawing.Point(902, 110);
+            this.PWM_SendButton.Name = "PWM_SendButton";
+            this.PWM_SendButton.Size = new System.Drawing.Size(171, 26);
+            this.PWM_SendButton.TabIndex = 23;
+            this.PWM_SendButton.Text = "send";
+            this.PWM_SendButton.UseVisualStyleBackColor = true;
+            this.PWM_SendButton.Click += new System.EventHandler(this.PWM_SendButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 885);
+            this.Controls.Add(this.PWM_SendButton);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.PWM_Text2);
+            this.Controls.Add(this.PWM_Text1);
             this.Controls.Add(this.chart2);
             this.Controls.Add(this.chart1);
             this.Controls.Add(this.panel2);
@@ -651,6 +710,7 @@
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -698,6 +758,12 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Timer SerialTimer;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.TextBox PWM_Text1;
+        private System.Windows.Forms.TextBox PWM_Text2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Button PWM_SendButton;
     }
 }
 

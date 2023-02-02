@@ -202,5 +202,13 @@ namespace PID_Tuner_App
                 t = 0;
             }
         }
+
+        private void PWM_SendButton_Click(object sender, EventArgs e)
+        {
+            string buffer1 = String.Format("p;{0}", Convert.ToInt32(PWM_Text1.Text));
+            string buffer2 = String.Format(";{0}\n", Convert.ToInt32(PWM_Text2.Text));
+            string buffer = buffer1 + buffer2;
+            serialPort1.Write(buffer);
+        }
     }
 }
