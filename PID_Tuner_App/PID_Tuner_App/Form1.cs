@@ -79,6 +79,10 @@ namespace PID_Tuner_App
                 DisconnectButton.Enabled = true;
                 VelSendButton.Enabled = true;
                 VelReadButton.Enabled = true;
+                TiltSendButton.Enabled = true;
+                TiltReadButton.Enabled = true;
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref Vel"].Points.Clear()));
+                chart1.Invoke((MethodInvoker)(() => chart1.Series["Real Vel"].Points.Clear()));
                 serialPort1.Open();
             }
         }
@@ -93,6 +97,8 @@ namespace PID_Tuner_App
             DisconnectButton.Enabled = false;
             VelSendButton.Enabled = false;
             VelReadButton.Enabled = false;
+            TiltSendButton.Enabled= false;
+            TiltReadButton.Enabled= false;
             serialPort1.Close();
             while (serialPort1.IsOpen) { }
         }
@@ -106,6 +112,8 @@ namespace PID_Tuner_App
             var parts = buffer.Split(';');
             identByte = Convert.ToChar(parts[0]);
 
+            Console.WriteLine(buffer);
+
             switch (identByte)
             {
                 case 'v':
@@ -116,7 +124,25 @@ namespace PID_Tuner_App
                     I_VelText.Invoke((MethodInvoker)(() => I_VelText.Text = Ki.ToString("0.000")));
                     D_VelText.Invoke((MethodInvoker)(() => D_VelText.Text = Kd.ToString("0.000")));
                     break;
+
+                case 't':
+                    Double Kp1 = Convert.ToDouble(parts[1]);
+                    Double Ki1 = Convert.ToDouble(parts[2]);
+                    Double Kd1 = Convert.ToDouble(parts[3]);
+                    P_TiltText.Invoke((MethodInvoker)(() => P_TiltText.Text = Kp1.ToString("0.000")));
+                    I_TiltText.Invoke((MethodInvoker)(() => I_TiltText.Text = Ki1.ToString("0.000")));
+                    D_TiltText.Invoke((MethodInvoker)(() => D_TiltText.Text = Kd1.ToString("0.000")));
+                    break;
+
+                case 's':
+                    double y1 = Convert.ToDouble(parts[1]);
+                    double y2 = Convert.ToDouble(parts[2]);
+                    double t = Convert.ToDouble(parts[3]);
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref Vel"].Points.AddXY(t, y1)));
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real Vel"].Points.AddXY(t, y2)));
+                    break;
             }
+            
         }
 
         private void VelSendButton_Click(object sender, EventArgs e)
@@ -126,13 +152,25 @@ namespace PID_Tuner_App
             string buffer3 = String.Format(";{0:0.000}\n", Convert.ToDouble(D_VelText.Text));
             string buffer = buffer1 + buffer2 + buffer3;
             serialPort1.Write(buffer);
-
-            Console.WriteLine(buffer);
         }
 
         private void VelReadButton_Click(object sender, EventArgs e)
         {
             serialPort1.Write("V\n");
+        }
+
+        private void TiltSendButton_Click(object sender, EventArgs e)
+        {
+            string buffer1 = String.Format("t;{0:0.000}", Convert.ToDouble(P_TiltText.Text));
+            string buffer2 = String.Format(";{0:0.000}", Convert.ToDouble(I_TiltText.Text));
+            string buffer3 = String.Format(";{0:0.000}\n", Convert.ToDouble(D_TiltText.Text));
+            string buffer = buffer1 + buffer2 + buffer3;
+            serialPort1.Write(buffer);
+        }
+
+        private void TiltReadButton_Click(object sender, EventArgs e)
+        {
+            serialPort1.Write("T\n");
         }
     }
 }
