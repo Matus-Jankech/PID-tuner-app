@@ -157,13 +157,13 @@ namespace PID_Tuner_App
                     int y5 = Convert.ToInt16(parts[5]);
                     double y6 = Convert.ToDouble(parts[6]);
                     double y7 = Convert.ToDouble(parts[7]);
-                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref_Vel"].Points.AddXY(t,y1)));
-                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_1"].Points.AddXY(t,y2)));
-                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.AddXY(t,y3)));
-                    chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.AddXY(t,y4)));
-                    chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.AddXY(t,y5)));
-                    chart3.Invoke((MethodInvoker)(() => chart3.Series["Ref_Pitch"].Points.AddXY(t,y6)));
-                    chart3.Invoke((MethodInvoker)(() => chart3.Series["Real_Pitch"].Points.AddXY(t,y7)));
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Ref_Vel"].Points.AddXY(t, y1)));
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_1"].Points.AddXY(t, y2)));
+                    chart1.Invoke((MethodInvoker)(() => chart1.Series["Real_Vel_2"].Points.AddXY(t, y3)));
+                    chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_1"].Points.AddXY(t, y4)));
+                    chart2.Invoke((MethodInvoker)(() => chart2.Series["PWM_2"].Points.AddXY(t, y5)));
+                    chart3.Invoke((MethodInvoker)(() => chart3.Series["Ref_Pitch"].Points.AddXY(t, y6)));
+                    chart3.Invoke((MethodInvoker)(() => chart3.Series["Real_Pitch"].Points.AddXY(t, y7)));
                     break;
             }
             
@@ -211,14 +211,6 @@ namespace PID_Tuner_App
                 chart3.Invoke((MethodInvoker)(() => chart3.Series["Real_Pitch"].Points.Clear()));
                 t = 0;
             }
-        }
-
-        private void PWM_SendButton_Click(object sender, EventArgs e)
-        {
-            string buffer1 = String.Format("p;{0}", Convert.ToInt32(PWM_Text1.Text));
-            string buffer2 = String.Format(";{0}\n", Convert.ToInt32(PWM_Text2.Text));
-            string buffer = buffer1 + buffer2;
-            serialPort1.Write(buffer);
         }
     }
 }
